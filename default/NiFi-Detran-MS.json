@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1743081135204,
+    "description" : "",
+    "identifier" : "NiFi-Detran-MS",
+    "lastModifiedTimestamp" : 1743081135204,
+    "name" : "NiFi - Detran MS",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
