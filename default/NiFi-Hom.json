@@ -1,4 +1,5 @@
 {
+  "externalControllerServices" : { },
   "flow" : {
     "createdTimestamp" : 1743080902902,
     "description" : "",
@@ -7,5 +8,642 @@
     "name" : "NiFi-Hom",
     "versionCount" : 0
   },
-  "latest" : false
+  "flowContents" : {
+    "comments" : "",
+    "componentType" : "PROCESS_GROUP",
+    "connections" : [ ],
+    "controllerServices" : [ {
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-dbcp-service-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.2.0"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-standard-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.2.0"
+        },
+        "type" : "org.apache.nifi.dbcp.DBCPService"
+      } ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "d92e7fdd-0b9b-3f1c-9335-e27d1f90376e",
+      "name" : "DB_PRODUCAO - Detran MS - ConnectionPool",
+      "properties" : {
+        "dbcp-min-idle-conns" : "0",
+        "Max Wait Time" : "500 millis",
+        "Database Driver Class Name" : "#{db_driver_classname}",
+        "dbcp-min-evictable-idle-time" : "30 mins",
+        "Max Total Connections" : "8",
+        "dbcp-max-conn-lifetime" : "-1",
+        "Database Connection URL" : "#{producao_db_url_connection}",
+        "dbcp-time-between-eviction-runs" : "-1",
+        "Database User" : "#{producao_db_username}",
+        "dbcp-soft-min-evictable-idle-time" : "-1",
+        "database-driver-locations" : "#{db_driver_local}",
+        "dbcp-max-idle-conns" : "8",
+        "Password" : "#{producao_db_password}"
+      },
+      "propertyDescriptors" : {
+        "dbcp-min-idle-conns" : {
+          "displayName" : "Minimum Idle Connections",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-min-idle-conns",
+          "sensitive" : false
+        },
+        "Max Wait Time" : {
+          "displayName" : "Max Wait Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max Wait Time",
+          "sensitive" : false
+        },
+        "Database Driver Class Name" : {
+          "displayName" : "Database Driver Class Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Database Driver Class Name",
+          "sensitive" : false
+        },
+        "dbcp-min-evictable-idle-time" : {
+          "displayName" : "Minimum Evictable Idle Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-min-evictable-idle-time",
+          "sensitive" : false
+        },
+        "Max Total Connections" : {
+          "displayName" : "Max Total Connections",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max Total Connections",
+          "sensitive" : false
+        },
+        "dbcp-max-conn-lifetime" : {
+          "displayName" : "Max Connection Lifetime",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-max-conn-lifetime",
+          "sensitive" : false
+        },
+        "Validation-query" : {
+          "displayName" : "Validation query",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Validation-query",
+          "sensitive" : false
+        },
+        "Database Connection URL" : {
+          "displayName" : "Database Connection URL",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Database Connection URL",
+          "sensitive" : false
+        },
+        "dbcp-time-between-eviction-runs" : {
+          "displayName" : "Time Between Eviction Runs",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-time-between-eviction-runs",
+          "sensitive" : false
+        },
+        "Database User" : {
+          "displayName" : "Database User",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Database User",
+          "sensitive" : false
+        },
+        "kerberos-user-service" : {
+          "displayName" : "Kerberos User Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "kerberos-user-service",
+          "sensitive" : false
+        },
+        "dbcp-soft-min-evictable-idle-time" : {
+          "displayName" : "Soft Minimum Evictable Idle Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-soft-min-evictable-idle-time",
+          "sensitive" : false
+        },
+        "database-driver-locations" : {
+          "displayName" : "Database Driver Location(s)",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "database-driver-locations",
+          "resourceDefinition" : {
+            "cardinality" : "MULTIPLE",
+            "resourceTypes" : [ "FILE", "DIRECTORY", "URL" ]
+          },
+          "sensitive" : false
+        },
+        "dbcp-max-idle-conns" : {
+          "displayName" : "Max Idle Connections",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-max-idle-conns",
+          "sensitive" : false
+        },
+        "Password" : {
+          "displayName" : "Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Password",
+          "sensitive" : true
+        }
+      },
+      "scheduledState" : "DISABLED",
+      "type" : "org.apache.nifi.dbcp.DBCPConnectionPool"
+    }, {
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-dbcp-service-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.2.0"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-standard-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.2.0"
+        },
+        "type" : "org.apache.nifi.dbcp.DBCPService"
+      } ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "10501891-50c6-314c-ac21-3e8621bbf727",
+      "name" : "DB_DW - Detran MS - ConnectionPool",
+      "properties" : {
+        "dbcp-min-idle-conns" : "0",
+        "Max Wait Time" : "500 millis",
+        "Database Driver Class Name" : "#{db_driver_classname}",
+        "dbcp-min-evictable-idle-time" : "30 mins",
+        "Max Total Connections" : "8",
+        "dbcp-max-conn-lifetime" : "-1",
+        "Database Connection URL" : "#{dw_db_url_connection}",
+        "dbcp-time-between-eviction-runs" : "-1",
+        "Database User" : "#{dw_db_username}",
+        "dbcp-soft-min-evictable-idle-time" : "-1",
+        "database-driver-locations" : "#{db_driver_local}",
+        "dbcp-max-idle-conns" : "8",
+        "Password" : "#{dw_db_password}"
+      },
+      "propertyDescriptors" : {
+        "dbcp-min-idle-conns" : {
+          "displayName" : "Minimum Idle Connections",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-min-idle-conns",
+          "sensitive" : false
+        },
+        "Max Wait Time" : {
+          "displayName" : "Max Wait Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max Wait Time",
+          "sensitive" : false
+        },
+        "Database Driver Class Name" : {
+          "displayName" : "Database Driver Class Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Database Driver Class Name",
+          "sensitive" : false
+        },
+        "dbcp-min-evictable-idle-time" : {
+          "displayName" : "Minimum Evictable Idle Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-min-evictable-idle-time",
+          "sensitive" : false
+        },
+        "Max Total Connections" : {
+          "displayName" : "Max Total Connections",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max Total Connections",
+          "sensitive" : false
+        },
+        "dbcp-max-conn-lifetime" : {
+          "displayName" : "Max Connection Lifetime",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-max-conn-lifetime",
+          "sensitive" : false
+        },
+        "Validation-query" : {
+          "displayName" : "Validation query",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Validation-query",
+          "sensitive" : false
+        },
+        "Database Connection URL" : {
+          "displayName" : "Database Connection URL",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Database Connection URL",
+          "sensitive" : false
+        },
+        "dbcp-time-between-eviction-runs" : {
+          "displayName" : "Time Between Eviction Runs",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-time-between-eviction-runs",
+          "sensitive" : false
+        },
+        "Database User" : {
+          "displayName" : "Database User",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Database User",
+          "sensitive" : false
+        },
+        "kerberos-user-service" : {
+          "displayName" : "Kerberos User Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "kerberos-user-service",
+          "sensitive" : false
+        },
+        "dbcp-soft-min-evictable-idle-time" : {
+          "displayName" : "Soft Minimum Evictable Idle Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-soft-min-evictable-idle-time",
+          "sensitive" : false
+        },
+        "database-driver-locations" : {
+          "displayName" : "Database Driver Location(s)",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "database-driver-locations",
+          "resourceDefinition" : {
+            "cardinality" : "MULTIPLE",
+            "resourceTypes" : [ "FILE", "DIRECTORY", "URL" ]
+          },
+          "sensitive" : false
+        },
+        "dbcp-max-idle-conns" : {
+          "displayName" : "Max Idle Connections",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-max-idle-conns",
+          "sensitive" : false
+        },
+        "Password" : {
+          "displayName" : "Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Password",
+          "sensitive" : true
+        }
+      },
+      "scheduledState" : "DISABLED",
+      "type" : "org.apache.nifi.dbcp.DBCPConnectionPool"
+    }, {
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-record-serialization-services-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.2.0"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-standard-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.2.0"
+        },
+        "type" : "org.apache.nifi.serialization.RecordReaderFactory"
+      } ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "e21c9b9a-898c-3f37-8f50-d1b2c31d2866",
+      "name" : "AvroReader",
+      "properties" : {
+        "schema-name" : "${schema.name}",
+        "cache-size" : "1000",
+        "schema-access-strategy" : "embedded-avro-schema",
+        "schema-text" : "${avro.schema}"
+      },
+      "propertyDescriptors" : {
+        "schema-reference-reader" : {
+          "displayName" : "Schema Reference Reader",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "schema-reference-reader",
+          "sensitive" : false
+        },
+        "schema-branch" : {
+          "displayName" : "Schema Branch",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "schema-branch",
+          "sensitive" : false
+        },
+        "schema-name" : {
+          "displayName" : "Schema Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "schema-name",
+          "sensitive" : false
+        },
+        "cache-size" : {
+          "displayName" : "Cache Size",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "cache-size",
+          "sensitive" : false
+        },
+        "schema-registry" : {
+          "displayName" : "Schema Registry",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "schema-registry",
+          "sensitive" : false
+        },
+        "schema-access-strategy" : {
+          "displayName" : "Schema Access Strategy",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "schema-access-strategy",
+          "sensitive" : false
+        },
+        "schema-version" : {
+          "displayName" : "Schema Version",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "schema-version",
+          "sensitive" : false
+        },
+        "schema-text" : {
+          "displayName" : "Schema Text",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "schema-text",
+          "sensitive" : false
+        }
+      },
+      "scheduledState" : "DISABLED",
+      "type" : "org.apache.nifi.avro.AvroReader"
+    }, {
+      "bulletinLevel" : "WARN",
+      "bundle" : {
+        "artifact" : "nifi-dbcp-service-nar",
+        "group" : "org.apache.nifi",
+        "version" : "2.2.0"
+      },
+      "comments" : "",
+      "componentType" : "CONTROLLER_SERVICE",
+      "controllerServiceApis" : [ {
+        "bundle" : {
+          "artifact" : "nifi-standard-services-api-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.2.0"
+        },
+        "type" : "org.apache.nifi.dbcp.DBCPService"
+      } ],
+      "groupIdentifier" : "flow-contents-group",
+      "identifier" : "7fa2ebe0-0ed2-3896-ae2e-530339969e78",
+      "name" : "DB_MIGRACAO - Detran MS - ConnectionPool",
+      "properties" : {
+        "dbcp-min-idle-conns" : "0",
+        "Max Wait Time" : "500 millis",
+        "Database Driver Class Name" : "#{db_driver_classname}",
+        "dbcp-min-evictable-idle-time" : "30 mins",
+        "Max Total Connections" : "8",
+        "dbcp-max-conn-lifetime" : "-1",
+        "Database Connection URL" : "#{migracao_db_url_connection}",
+        "dbcp-time-between-eviction-runs" : "-1",
+        "Database User" : "#{migracao_db_username}",
+        "dbcp-soft-min-evictable-idle-time" : "-1",
+        "database-driver-locations" : "#{db_driver_local}",
+        "dbcp-max-idle-conns" : "8",
+        "Password" : "#{migracao_db_password}"
+      },
+      "propertyDescriptors" : {
+        "dbcp-min-idle-conns" : {
+          "displayName" : "Minimum Idle Connections",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-min-idle-conns",
+          "sensitive" : false
+        },
+        "Max Wait Time" : {
+          "displayName" : "Max Wait Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max Wait Time",
+          "sensitive" : false
+        },
+        "Database Driver Class Name" : {
+          "displayName" : "Database Driver Class Name",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Database Driver Class Name",
+          "sensitive" : false
+        },
+        "dbcp-min-evictable-idle-time" : {
+          "displayName" : "Minimum Evictable Idle Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-min-evictable-idle-time",
+          "sensitive" : false
+        },
+        "Max Total Connections" : {
+          "displayName" : "Max Total Connections",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Max Total Connections",
+          "sensitive" : false
+        },
+        "dbcp-max-conn-lifetime" : {
+          "displayName" : "Max Connection Lifetime",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-max-conn-lifetime",
+          "sensitive" : false
+        },
+        "Validation-query" : {
+          "displayName" : "Validation query",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Validation-query",
+          "sensitive" : false
+        },
+        "Database Connection URL" : {
+          "displayName" : "Database Connection URL",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Database Connection URL",
+          "sensitive" : false
+        },
+        "dbcp-time-between-eviction-runs" : {
+          "displayName" : "Time Between Eviction Runs",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-time-between-eviction-runs",
+          "sensitive" : false
+        },
+        "Database User" : {
+          "displayName" : "Database User",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Database User",
+          "sensitive" : false
+        },
+        "kerberos-user-service" : {
+          "displayName" : "Kerberos User Service",
+          "dynamic" : false,
+          "identifiesControllerService" : true,
+          "name" : "kerberos-user-service",
+          "sensitive" : false
+        },
+        "dbcp-soft-min-evictable-idle-time" : {
+          "displayName" : "Soft Minimum Evictable Idle Time",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-soft-min-evictable-idle-time",
+          "sensitive" : false
+        },
+        "database-driver-locations" : {
+          "displayName" : "Database Driver Location(s)",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "database-driver-locations",
+          "resourceDefinition" : {
+            "cardinality" : "MULTIPLE",
+            "resourceTypes" : [ "FILE", "DIRECTORY", "URL" ]
+          },
+          "sensitive" : false
+        },
+        "dbcp-max-idle-conns" : {
+          "displayName" : "Max Idle Connections",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "dbcp-max-idle-conns",
+          "sensitive" : false
+        },
+        "Password" : {
+          "displayName" : "Password",
+          "dynamic" : false,
+          "identifiesControllerService" : false,
+          "name" : "Password",
+          "sensitive" : true
+        }
+      },
+      "scheduledState" : "DISABLED",
+      "type" : "org.apache.nifi.dbcp.DBCPConnectionPool"
+    } ],
+    "defaultBackPressureDataSizeThreshold" : "1 GB",
+    "defaultBackPressureObjectThreshold" : 10000,
+    "defaultFlowFileExpiration" : "0 sec",
+    "executionEngine" : "INHERITED",
+    "externalControllerServiceReferences" : { },
+    "flowFileConcurrency" : "UNBOUNDED",
+    "flowFileOutboundPolicy" : "STREAM_WHEN_AVAILABLE",
+    "funnels" : [ ],
+    "identifier" : "flow-contents-group",
+    "inputPorts" : [ ],
+    "labels" : [ ],
+    "maxConcurrentTasks" : 1,
+    "name" : "DW - Detran MS",
+    "outputPorts" : [ ],
+    "parameterContextName" : "DW - Detran MS - Variáveis",
+    "position" : {
+      "x" : 0.0,
+      "y" : 0.0
+    },
+    "processGroups" : [ ],
+    "processors" : [ ],
+    "remoteProcessGroups" : [ ],
+    "scheduledState" : "ENABLED",
+    "statelessFlowTimeout" : "1 min"
+  },
+  "flowEncodingVersion" : "1.0",
+  "latest" : false,
+  "parameterContexts" : {
+    "DW - Detran MS - Variáveis" : {
+      "componentType" : "PARAMETER_CONTEXT",
+      "inheritedParameterContexts" : [ ],
+      "name" : "DW - Detran MS - Variáveis",
+      "parameters" : [ {
+        "description" : "",
+        "name" : "dw_db_username",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "user_tbu"
+      }, {
+        "description" : "",
+        "name" : "producao_db_url_connection",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "jdbc:sqlserver://;serverName=10.9.23.92;databaseName=DB_PRODUCAO;encrypt=true;trustServerCertificate=true"
+      }, {
+        "description" : "",
+        "name" : "dw_db_url_connection",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "jdbc:sqlserver://;serverName=10.9.23.41;databaseName=DW_AT;encrypt=true;trustServerCertificate=true"
+      }, {
+        "description" : "",
+        "name" : "db_driver_local",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "/opt/nifi/nifi-current/database_repository/jdbc/mssql-jdbc-12.8.1.jre11.jar"
+      }, {
+        "description" : "",
+        "name" : "dw_db_password",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "",
+        "name" : "migracao_db_url_connection",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "jdbc:sqlserver://;serverName=10.9.23.92;databaseName=DB_MIGRACAO;encrypt=true;trustServerCertificate=true"
+      }, {
+        "description" : "",
+        "name" : "migracao_db_username",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "user_tbu"
+      }, {
+        "description" : "",
+        "name" : "producao_db_password",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "",
+        "name" : "migracao_db_password",
+        "provided" : false,
+        "sensitive" : true
+      }, {
+        "description" : "",
+        "name" : "producao_db_username",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "user_tbu"
+      }, {
+        "description" : "",
+        "name" : "db_driver_classname",
+        "provided" : false,
+        "sensitive" : false,
+        "value" : "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+      } ]
+    }
+  },
+  "parameterProviders" : { },
+  "snapshotMetadata" : {
+    "flowIdentifier" : "NiFi-Hom",
+    "timestamp" : 0
+  }
 }
