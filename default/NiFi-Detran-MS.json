@@ -565,7 +565,36 @@
     "processGroups" : [ {
       "comments" : "",
       "componentType" : "PROCESS_GROUP",
-      "connections" : [ ],
+      "connections" : [ {
+        "backPressureDataSizeThreshold" : "1 GB",
+        "backPressureObjectThreshold" : 10000,
+        "bends" : [ ],
+        "componentType" : "CONNECTION",
+        "destination" : {
+          "groupId" : "acd019cc-ccde-3f3e-9e80-6191e4ea1de5",
+          "id" : "3e80cad1-d3d7-33a4-981a-17f4d2120beb",
+          "name" : "_STAGE - Condutor",
+          "type" : "INPUT_PORT"
+        },
+        "flowFileExpiration" : "0 sec",
+        "groupIdentifier" : "fbce8b88-44e6-3cbc-abb7-7961225b9bc9",
+        "identifier" : "a5d480ea-ddda-3547-8b44-9662d17b15a7",
+        "labelIndex" : 0,
+        "loadBalanceCompression" : "DO_NOT_COMPRESS",
+        "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+        "name" : "",
+        "partitioningAttribute" : "",
+        "prioritizers" : [ ],
+        "selectedRelationships" : [ "success" ],
+        "source" : {
+          "comments" : "",
+          "groupId" : "fbce8b88-44e6-3cbc-abb7-7961225b9bc9",
+          "id" : "e27be12d-f282-37bb-93a6-9485086e5522",
+          "name" : "GenerateFlowFile",
+          "type" : "PROCESSOR"
+        },
+        "zIndex" : 0
+      } ],
       "controllerServices" : [ ],
       "defaultBackPressureDataSizeThreshold" : "1 GB",
       "defaultBackPressureObjectThreshold" : 10000,
@@ -600,15 +629,29 @@
         "funnels" : [ ],
         "groupIdentifier" : "fbce8b88-44e6-3cbc-abb7-7961225b9bc9",
         "identifier" : "acd019cc-ccde-3f3e-9e80-6191e4ea1de5",
-        "inputPorts" : [ ],
+        "inputPorts" : [ {
+          "allowRemoteAccess" : false,
+          "componentType" : "INPUT_PORT",
+          "concurrentlySchedulableTaskCount" : 1,
+          "groupIdentifier" : "acd019cc-ccde-3f3e-9e80-6191e4ea1de5",
+          "identifier" : "3e80cad1-d3d7-33a4-981a-17f4d2120beb",
+          "name" : "_STAGE - Condutor",
+          "portFunction" : "STANDARD",
+          "position" : {
+            "x" : -424.0,
+            "y" : -368.0
+          },
+          "scheduledState" : "ENABLED",
+          "type" : "INPUT_PORT"
+        } ],
         "labels" : [ ],
         "maxConcurrentTasks" : 1,
         "name" : "_CONDUTOR",
         "outputPorts" : [ ],
         "parameterContextName" : "DW - Detran MS",
         "position" : {
-          "x" : -228.99996864174489,
-          "y" : -134.79999587147734
+          "x" : -40.0,
+          "y" : -184.0
         },
         "processGroups" : [ ],
         "processors" : [ ],
@@ -616,7 +659,96 @@
         "scheduledState" : "ENABLED",
         "statelessFlowTimeout" : "1 min"
       } ],
-      "processors" : [ ],
+      "processors" : [ {
+        "autoTerminatedRelationships" : [ ],
+        "backoffMechanism" : "PENALIZE_FLOWFILE",
+        "bulletinLevel" : "WARN",
+        "bundle" : {
+          "artifact" : "nifi-standard-nar",
+          "group" : "org.apache.nifi",
+          "version" : "2.2.0"
+        },
+        "comments" : "",
+        "componentType" : "PROCESSOR",
+        "concurrentlySchedulableTaskCount" : 1,
+        "executionNode" : "ALL",
+        "groupIdentifier" : "fbce8b88-44e6-3cbc-abb7-7961225b9bc9",
+        "identifier" : "e27be12d-f282-37bb-93a6-9485086e5522",
+        "maxBackoffPeriod" : "10 mins",
+        "name" : "GenerateFlowFile",
+        "penaltyDuration" : "30 sec",
+        "position" : {
+          "x" : -720.0,
+          "y" : -56.0
+        },
+        "properties" : {
+          "character-set" : "UTF-8",
+          "File Size" : "0B",
+          "Batch Size" : "1",
+          "Unique FlowFiles" : "false",
+          "Data Format" : "Text"
+        },
+        "propertyDescriptors" : {
+          "character-set" : {
+            "displayName" : "Character Set",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "character-set",
+            "sensitive" : false
+          },
+          "File Size" : {
+            "displayName" : "File Size",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "File Size",
+            "sensitive" : false
+          },
+          "mime-type" : {
+            "displayName" : "Mime Type",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "mime-type",
+            "sensitive" : false
+          },
+          "generate-ff-custom-text" : {
+            "displayName" : "Custom Text",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "generate-ff-custom-text",
+            "sensitive" : false
+          },
+          "Batch Size" : {
+            "displayName" : "Batch Size",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Batch Size",
+            "sensitive" : false
+          },
+          "Unique FlowFiles" : {
+            "displayName" : "Unique FlowFiles",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Unique FlowFiles",
+            "sensitive" : false
+          },
+          "Data Format" : {
+            "displayName" : "Data Format",
+            "dynamic" : false,
+            "identifiesControllerService" : false,
+            "name" : "Data Format",
+            "sensitive" : false
+          }
+        },
+        "retriedRelationships" : [ ],
+        "retryCount" : 10,
+        "runDurationMillis" : 0,
+        "scheduledState" : "ENABLED",
+        "schedulingPeriod" : "1 min",
+        "schedulingStrategy" : "TIMER_DRIVEN",
+        "style" : { },
+        "type" : "org.apache.nifi.processors.standard.GenerateFlowFile",
+        "yieldDuration" : "1 sec"
+      } ],
       "remoteProcessGroups" : [ ],
       "scheduledState" : "ENABLED",
       "statelessFlowTimeout" : "1 min"
