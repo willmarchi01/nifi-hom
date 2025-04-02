@@ -720,35 +720,6 @@
             "type" : "PROCESSOR"
           },
           "zIndex" : 0
-        }, {
-          "backPressureDataSizeThreshold" : "1 GB",
-          "backPressureObjectThreshold" : 10000,
-          "bends" : [ ],
-          "componentType" : "CONNECTION",
-          "destination" : {
-            "comments" : "",
-            "groupId" : "acd019cc-ccde-3f3e-9e80-6191e4ea1de5",
-            "id" : "83d71f54-9623-33b7-8f01-c9b4b79dcf4f",
-            "name" : "ExecuteSQL",
-            "type" : "PROCESSOR"
-          },
-          "flowFileExpiration" : "0 sec",
-          "groupIdentifier" : "acd019cc-ccde-3f3e-9e80-6191e4ea1de5",
-          "identifier" : "2ae192fc-a5b9-3372-881c-b5012b2785e1",
-          "labelIndex" : 0,
-          "loadBalanceCompression" : "DO_NOT_COMPRESS",
-          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-          "name" : "",
-          "partitioningAttribute" : "",
-          "prioritizers" : [ ],
-          "selectedRelationships" : [ "" ],
-          "source" : {
-            "groupId" : "acd019cc-ccde-3f3e-9e80-6191e4ea1de5",
-            "id" : "557760ed-676e-333a-86be-ad2a54ae3049",
-            "name" : "_STAGE - Condutor - Input",
-            "type" : "INPUT_PORT"
-          },
-          "zIndex" : 0
         } ],
         "controllerServices" : [ ],
         "defaultBackPressureDataSizeThreshold" : "1 GB",
@@ -769,28 +740,13 @@
           "name" : "_STAGE - Condutor - Input",
           "portFunction" : "STANDARD",
           "position" : {
-            "x" : -464.0,
+            "x" : -472.0,
             "y" : -376.0
           },
           "scheduledState" : "ENABLED",
           "type" : "INPUT_PORT"
         } ],
-        "labels" : [ {
-          "componentType" : "LABEL",
-          "groupIdentifier" : "acd019cc-ccde-3f3e-9e80-6191e4ea1de5",
-          "height" : 248.0,
-          "identifier" : "281a4986-dd92-3dc2-aa23-2793eab6f17c",
-          "label" : "Truncate - stage.[nome_tabela]",
-          "position" : {
-            "x" : -528.0,
-            "y" : -168.0
-          },
-          "style" : {
-            "font-size" : "16px"
-          },
-          "width" : 1824.0,
-          "zIndex" : 0
-        } ],
+        "labels" : [ ],
         "maxConcurrentTasks" : 1,
         "name" : "_CONDUTOR",
         "outputPorts" : [ ],
