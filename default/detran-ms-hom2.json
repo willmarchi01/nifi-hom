@@ -1295,8 +1295,8 @@
         } ],
         "parameterContextName" : "DW - Detran MS",
         "position" : {
-          "x" : -328.0,
-          "y" : -56.0
+          "x" : -320.0,
+          "y" : -16.0
         },
         "processGroups" : [ ],
         "processors" : [ {
@@ -3039,12 +3039,9 @@
         "comments" : "",
         "componentType" : "PROCESS_GROUP",
         "connections" : [ {
-          "backPressureDataSizeThreshold" : "3 GB",
+          "backPressureDataSizeThreshold" : "10 GB",
           "backPressureObjectThreshold" : 10000,
-          "bends" : [ {
-            "x" : 352.0,
-            "y" : 376.0
-          } ],
+          "bends" : [ ],
           "componentType" : "CONNECTION",
           "destination" : {
             "comments" : "",
@@ -3055,20 +3052,49 @@
           },
           "flowFileExpiration" : "0 sec",
           "groupIdentifier" : "8ea386fd-92a5-3ad4-9b93-06e170a5c008",
-          "identifier" : "95d8dfca-3bf4-3413-9923-d7964a6581f5",
+          "identifier" : "c2596321-357f-3812-9516-6f560b0a21fd",
           "labelIndex" : 0,
           "loadBalanceCompression" : "DO_NOT_COMPRESS",
           "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
           "name" : "",
           "partitioningAttribute" : "",
           "prioritizers" : [ ],
-          "selectedRelationships" : [ "success" ],
+          "selectedRelationships" : [ "merged" ],
           "source" : {
             "comments" : "",
             "groupId" : "8ea386fd-92a5-3ad4-9b93-06e170a5c008",
-            "id" : "99e2b8be-2d4d-35e8-a8a6-abf105f01268",
-            "name" : "PutDatabaseRecord",
+            "id" : "ee20b7e1-920f-3005-bc5c-5a5d3f7df29b",
+            "name" : "MergeContent",
             "type" : "PROCESSOR"
+          },
+          "zIndex" : 0
+        }, {
+          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureObjectThreshold" : 10000,
+          "bends" : [ ],
+          "componentType" : "CONNECTION",
+          "destination" : {
+            "comments" : "",
+            "groupId" : "8ea386fd-92a5-3ad4-9b93-06e170a5c008",
+            "id" : "e099398f-b3a8-326e-8806-92477484f168",
+            "name" : "GenerateTableFetch",
+            "type" : "PROCESSOR"
+          },
+          "flowFileExpiration" : "0 sec",
+          "groupIdentifier" : "8ea386fd-92a5-3ad4-9b93-06e170a5c008",
+          "identifier" : "a39731d7-da67-3578-b21d-fcfcce94245c",
+          "labelIndex" : 0,
+          "loadBalanceCompression" : "DO_NOT_COMPRESS",
+          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
+          "name" : "",
+          "partitioningAttribute" : "",
+          "prioritizers" : [ ],
+          "selectedRelationships" : [ "" ],
+          "source" : {
+            "groupId" : "8ea386fd-92a5-3ad4-9b93-06e170a5c008",
+            "id" : "2893bf13-86d8-348e-b4ff-a104e5583a65",
+            "name" : "_STAGE - Condutor - Input",
+            "type" : "INPUT_PORT"
           },
           "zIndex" : 0
         }, {
@@ -3174,27 +3200,21 @@
           },
           "zIndex" : 0
         }, {
-          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureDataSizeThreshold" : "10 GB",
           "backPressureObjectThreshold" : 10000,
-          "bends" : [ {
-            "x" : 251.7899169921875,
-            "y" : -55.61332702636719
-          }, {
-            "x" : 102.0,
-            "y" : -168.0
-          } ],
+          "bends" : [ ],
           "componentType" : "CONNECTION",
           "destination" : {
             "comments" : "",
             "groupId" : "8ea386fd-92a5-3ad4-9b93-06e170a5c008",
-            "id" : "8a03ae7d-3498-3ecb-b361-081640b21de5",
-            "name" : "LogAttribute",
+            "id" : "537f84a0-73a8-37fe-b330-39d93ecffd41",
+            "name" : "ExecuteSQL",
             "type" : "PROCESSOR"
           },
           "flowFileExpiration" : "0 sec",
           "groupIdentifier" : "8ea386fd-92a5-3ad4-9b93-06e170a5c008",
-          "identifier" : "1cf2ddc5-6952-3d87-bed1-0077aa1b0158",
-          "labelIndex" : 1,
+          "identifier" : "f14fb449-ccd9-3b55-93be-c58caaa2d585",
+          "labelIndex" : 0,
           "loadBalanceCompression" : "DO_NOT_COMPRESS",
           "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
           "name" : "",
@@ -3204,8 +3224,8 @@
           "source" : {
             "comments" : "",
             "groupId" : "8ea386fd-92a5-3ad4-9b93-06e170a5c008",
-            "id" : "852bd814-3a16-3554-8cb7-22036a66c3ae",
-            "name" : "Notify",
+            "id" : "e099398f-b3a8-326e-8806-92477484f168",
+            "name" : "GenerateTableFetch",
             "type" : "PROCESSOR"
           },
           "zIndex" : 0
@@ -3240,7 +3260,7 @@
           },
           "zIndex" : 0
         }, {
-          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureDataSizeThreshold" : "10 GB",
           "backPressureObjectThreshold" : 10000,
           "bends" : [ ],
           "componentType" : "CONNECTION",
@@ -3300,49 +3320,20 @@
           },
           "zIndex" : 0
         }, {
-          "backPressureDataSizeThreshold" : "1 GB",
+          "backPressureDataSizeThreshold" : "10 GB",
           "backPressureObjectThreshold" : 10000,
           "bends" : [ ],
           "componentType" : "CONNECTION",
           "destination" : {
             "comments" : "",
             "groupId" : "8ea386fd-92a5-3ad4-9b93-06e170a5c008",
-            "id" : "e099398f-b3a8-326e-8806-92477484f168",
-            "name" : "GenerateTableFetch",
+            "id" : "ee20b7e1-920f-3005-bc5c-5a5d3f7df29b",
+            "name" : "MergeContent",
             "type" : "PROCESSOR"
           },
           "flowFileExpiration" : "0 sec",
           "groupIdentifier" : "8ea386fd-92a5-3ad4-9b93-06e170a5c008",
-          "identifier" : "f2ce2a14-8c92-3edd-983c-4d20d36f82e4",
-          "labelIndex" : 0,
-          "loadBalanceCompression" : "DO_NOT_COMPRESS",
-          "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
-          "name" : "",
-          "partitioningAttribute" : "",
-          "prioritizers" : [ ],
-          "selectedRelationships" : [ "" ],
-          "source" : {
-            "groupId" : "8ea386fd-92a5-3ad4-9b93-06e170a5c008",
-            "id" : "2893bf13-86d8-348e-b4ff-a104e5583a65",
-            "name" : "_STAGE - Condutor - Input",
-            "type" : "INPUT_PORT"
-          },
-          "zIndex" : 0
-        }, {
-          "backPressureDataSizeThreshold" : "1 GB",
-          "backPressureObjectThreshold" : 10000,
-          "bends" : [ ],
-          "componentType" : "CONNECTION",
-          "destination" : {
-            "comments" : "",
-            "groupId" : "8ea386fd-92a5-3ad4-9b93-06e170a5c008",
-            "id" : "537f84a0-73a8-37fe-b330-39d93ecffd41",
-            "name" : "ExecuteSQL",
-            "type" : "PROCESSOR"
-          },
-          "flowFileExpiration" : "0 sec",
-          "groupIdentifier" : "8ea386fd-92a5-3ad4-9b93-06e170a5c008",
-          "identifier" : "b3bb034d-144b-3660-9613-22c7996acae0",
+          "identifier" : "c7f3ae90-1236-3c58-9e69-579fbfef2ce0",
           "labelIndex" : 0,
           "loadBalanceCompression" : "DO_NOT_COMPRESS",
           "loadBalanceStrategy" : "DO_NOT_LOAD_BALANCE",
@@ -3353,8 +3344,8 @@
           "source" : {
             "comments" : "",
             "groupId" : "8ea386fd-92a5-3ad4-9b93-06e170a5c008",
-            "id" : "e099398f-b3a8-326e-8806-92477484f168",
-            "name" : "GenerateTableFetch",
+            "id" : "99e2b8be-2d4d-35e8-a8a6-abf105f01268",
+            "name" : "PutDatabaseRecord",
             "type" : "PROCESSOR"
           },
           "zIndex" : 0
@@ -3647,6 +3638,206 @@
           "type" : "org.apache.nifi.processors.standard.LogAttribute",
           "yieldDuration" : "1 sec"
         }, {
+          "autoTerminatedRelationships" : [ "original", "failure" ],
+          "backoffMechanism" : "PENALIZE_FLOWFILE",
+          "bulletinLevel" : "WARN",
+          "bundle" : {
+            "artifact" : "nifi-standard-nar",
+            "group" : "org.apache.nifi",
+            "version" : "2.2.0"
+          },
+          "comments" : "",
+          "componentType" : "PROCESSOR",
+          "concurrentlySchedulableTaskCount" : 1,
+          "executionNode" : "ALL",
+          "groupIdentifier" : "8ea386fd-92a5-3ad4-9b93-06e170a5c008",
+          "identifier" : "ee20b7e1-920f-3005-bc5c-5a5d3f7df29b",
+          "maxBackoffPeriod" : "10 mins",
+          "name" : "MergeContent",
+          "penaltyDuration" : "30 sec",
+          "position" : {
+            "x" : 176.0,
+            "y" : 312.0
+          },
+          "properties" : {
+            "Keep Path" : "false",
+            "Merge Strategy" : "Defragment",
+            "Attribute Strategy" : "Keep Only Common Attributes",
+            "FlowFile Insertion Strategy" : "Last in Bin",
+            "Compression Level" : "1",
+            "Maximum Number of Entries" : "1000",
+            "Minimum Group Size" : "0 B",
+            "Maximum number of Bins" : "5",
+            "Tar Modified Time" : "${file.lastModifiedTime}",
+            "Delimiter Strategy" : "Do Not Use Delimiters",
+            "Merge Format" : "Binary Concatenation",
+            "mergecontent-metadata-strategy" : "Do Not Merge Uncommon Metadata",
+            "Minimum Number of Entries" : "1"
+          },
+          "propertyDescriptors" : {
+            "Keep Path" : {
+              "displayName" : "Keep Path",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Keep Path",
+              "sensitive" : false
+            },
+            "Maximum Group Size" : {
+              "displayName" : "Maximum Group Size",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Maximum Group Size",
+              "sensitive" : false
+            },
+            "Merge Strategy" : {
+              "displayName" : "Merge Strategy",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Merge Strategy",
+              "sensitive" : false
+            },
+            "Attribute Strategy" : {
+              "displayName" : "Attribute Strategy",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Attribute Strategy",
+              "sensitive" : false
+            },
+            "FlowFile Insertion Strategy" : {
+              "displayName" : "FlowFile Insertion Strategy",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "FlowFile Insertion Strategy",
+              "sensitive" : false
+            },
+            "Compression Level" : {
+              "displayName" : "Compression Level",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Compression Level",
+              "sensitive" : false
+            },
+            "Maximum Number of Entries" : {
+              "displayName" : "Maximum Number of Entries",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Maximum Number of Entries",
+              "sensitive" : false
+            },
+            "Minimum Group Size" : {
+              "displayName" : "Minimum Group Size",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Minimum Group Size",
+              "sensitive" : false
+            },
+            "Maximum number of Bins" : {
+              "displayName" : "Maximum number of Bins",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Maximum number of Bins",
+              "sensitive" : false
+            },
+            "Tar Modified Time" : {
+              "displayName" : "Tar Modified Time",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Tar Modified Time",
+              "sensitive" : false
+            },
+            "Delimiter Strategy" : {
+              "displayName" : "Delimiter Strategy",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Delimiter Strategy",
+              "sensitive" : false
+            },
+            "Merge Format" : {
+              "displayName" : "Merge Format",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Merge Format",
+              "sensitive" : false
+            },
+            "Footer File" : {
+              "displayName" : "Footer",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Footer File",
+              "resourceDefinition" : {
+                "cardinality" : "SINGLE",
+                "resourceTypes" : [ "FILE", "TEXT" ]
+              },
+              "sensitive" : false
+            },
+            "Max Bin Age" : {
+              "displayName" : "Max Bin Age",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Max Bin Age",
+              "sensitive" : false
+            },
+            "Demarcator File" : {
+              "displayName" : "Demarcator",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Demarcator File",
+              "resourceDefinition" : {
+                "cardinality" : "SINGLE",
+                "resourceTypes" : [ "FILE", "TEXT" ]
+              },
+              "sensitive" : false
+            },
+            "Correlation Attribute Name" : {
+              "displayName" : "Correlation Attribute Name",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Correlation Attribute Name",
+              "sensitive" : false
+            },
+            "Bin Termination Check" : {
+              "displayName" : "Bin Termination Check",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Bin Termination Check",
+              "sensitive" : false
+            },
+            "Header File" : {
+              "displayName" : "Header",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Header File",
+              "resourceDefinition" : {
+                "cardinality" : "SINGLE",
+                "resourceTypes" : [ "FILE", "TEXT" ]
+              },
+              "sensitive" : false
+            },
+            "mergecontent-metadata-strategy" : {
+              "displayName" : "Metadata Strategy",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "mergecontent-metadata-strategy",
+              "sensitive" : false
+            },
+            "Minimum Number of Entries" : {
+              "displayName" : "Minimum Number of Entries",
+              "dynamic" : false,
+              "identifiesControllerService" : false,
+              "name" : "Minimum Number of Entries",
+              "sensitive" : false
+            }
+          },
+          "retriedRelationships" : [ ],
+          "retryCount" : 10,
+          "runDurationMillis" : 0,
+          "scheduledState" : "ENABLED",
+          "schedulingPeriod" : "0 sec",
+          "schedulingStrategy" : "TIMER_DRIVEN",
+          "style" : { },
+          "type" : "org.apache.nifi.processors.standard.MergeContent",
+          "yieldDuration" : "1 sec"
+        }, {
           "autoTerminatedRelationships" : [ ],
           "backoffMechanism" : "PENALIZE_FLOWFILE",
           "bulletinLevel" : "WARN",
@@ -3675,8 +3866,8 @@
             "put-db-record-statement-type" : "INSERT",
             "put-db-record-quoted-identifiers" : "false",
             "put-db-record-unmatched-field-behavior" : "Ignore Unmatched Fields",
-            "put-db-record-max-batch-size" : "1000",
-            "database-session-autocommit" : "false",
+            "put-db-record-max-batch-size" : "0",
+            "database-session-autocommit" : "true",
             "table-schema-cache-size" : "100",
             "put-db-record-quoted-table-identifiers" : "false",
             "put-db-record-translate-field-names" : "true",
@@ -4001,7 +4192,7 @@
           "type" : "org.apache.nifi.processors.standard.LogAttribute",
           "yieldDuration" : "1 sec"
         }, {
-          "autoTerminatedRelationships" : [ ],
+          "autoTerminatedRelationships" : [ "success" ],
           "backoffMechanism" : "PENALIZE_FLOWFILE",
           "bulletinLevel" : "WARN",
           "bundle" : {
@@ -4111,7 +4302,8 @@
             "gen-table-custom-orderby-column" : "ISN",
             "Max Wait Time" : "0 seconds",
             "Database Connection Pooling Service" : "ae96e4c1-0a4f-3956-adc2-74d1569cee2c",
-            "gen-table-fetch-partition-size" : "10000"
+            "gen-table-fetch-partition-size" : "10000",
+            "Columns to Return" : "    a.ISN AS ISN\n,   LTRIM(RTRIM(a.DIARCH_NOMECO)) AS Nome"
           },
           "propertyDescriptors" : {
             "gen-table-output-flowfile-on-zero-results" : {
@@ -4342,7 +4534,7 @@
             "y" : -56.0
           },
           "properties" : {
-            "esql-max-rows" : "0",
+            "esql-max-rows" : "10000",
             "dbf-default-precision" : "10",
             "Max Wait Time" : "0 seconds",
             "Database Connection Pooling Service" : "ae96e4c1-0a4f-3956-adc2-74d1569cee2c",
@@ -4352,6 +4544,7 @@
             "compression-format" : "NONE",
             "esql-output-batch-size" : "0",
             "esql-fetch-size" : "0",
+            "SQL select query" : "SELECT\n    a.ISN AS ISN\n,   LTRIM(RTRIM(a.DIARCH_NOMECO)) AS Nome\nFROM\n    DB_MIGRACAO.dbo.AEBU_RCH_CADASTRO a",
             "dbf-normalize" : "false"
           },
           "propertyDescriptors" : {
