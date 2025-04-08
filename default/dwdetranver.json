@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1744134419649,
+    "description" : "Versionamento do Ambiente de Desenvolvimento do DW Detran MS",
+    "identifier" : "dwdetranver",
+    "lastModifiedTimestamp" : 1744134419649,
+    "name" : "dw_detran_ver",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
